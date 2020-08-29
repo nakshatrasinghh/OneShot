@@ -15,13 +15,13 @@ pip install textblob==0.15.3
 
 Install 
 
-`pip install git+https://github.com/nakshatrasinghh/Preprocessing_Nakshatra.git`
+`pip install git+https://github.com/nakshatrasinghh/Preprocess_Nakshatra.git`
 
 `python -m spacy download en_core_web_md`
 
 Uninstall
 
-`pip uninstall Preprocessing_Nakshatra`
+`pip uninstall Preprocess_Nakshatra`
 
 #### How to use it for preprocessing
 You have to have installed spacy and python3 to make it work.
