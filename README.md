@@ -13,7 +13,7 @@ pip install textblob==0.15.3
 Install 
 
 `pip install git+https://github.com/nakshatrasinghh/Preprocessing_Nakshatra.git`
-`python -m spacy download en_core_web_lg'
+`python -m spacy download en_core_web_lg`
 
 Uninstall
 
@@ -41,7 +41,7 @@ Use this if you want to use them one by one
 ```
 import pandas as pd
 import numpy as np
-import Preprocessing_Nakshatra as ps
+import Preprocess_Nakshatra as ps
 
 df = pd.read_csv('imdb_reviews.txt', sep = '\t', header = None)
 df.columns = ['reviews', 'sentiment']
