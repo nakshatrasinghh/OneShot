@@ -4,10 +4,13 @@ This python package is made by Nakshatra Singh.
 
 Dependencies
 ```
+---------------------------------------
 pip install spacy==2.2.3
 python -m spacy download en_core_web_lg
 pip install beautifulsoup4==4.9.1
 pip install textblob==0.15.3
+---------------------------------------
+
 ```
 
 Install 
@@ -24,6 +27,7 @@ Uninstall
 You have to have installed spacy and python3 to make it work.
 
 ```
+----------------------------------------------------------
 def get_clean(x):
     x = str(x).lower().replace('\\', '').replace('_', ' ')
     x = ps.cont_exp(x)
@@ -36,10 +40,12 @@ def get_clean(x):
     x = ps.remove_special_chars(x)
     x = re.sub("(.)\\1{2,}", "\\1", x)
     return x
+----------------------------------------------------------
 ```
 
 Use this if you want to use them one by one
 ```
+---------------------------------------
 import pandas as pd
 import numpy as np
 import Preprocess_Nakshatra as ps
@@ -57,6 +63,7 @@ df['reviews'] = df['reviews'].apply(lambda x: ps.remove_special_chars(x))
 df['reviews'] = df['reviews'].apply(lambda x: ps.remove_accented_chars(x))
 df['reviews'] = df['reviews'].apply(lambda x: ps.make_base(x)) #ran -> run,
 df['reviews'] = df['reviews'].apply(lambda x: ps.spelling_correction(x).raw_sentences[0]) #seplling -> spelling
+---------------------------------------
 ```
 
 Note: Avoid to use `make_base` and `spelling_correction` for very large dataset otherwise it might take hours to process.
@@ -65,9 +72,11 @@ Note: Avoid to use `make_base` and `spelling_correction` for very large dataset 
 #### Extra
 
 ```
+----------------------------------
 x = 'lllooooovvveeee youuuu'
 x = re.sub("(.)\\1{2,}", "\\1", x)
 print(x)
 ---
 love you
+----------------------------------
 ```
