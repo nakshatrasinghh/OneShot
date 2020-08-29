@@ -1,4 +1,4 @@
-from preprocess_kgptalkie import utils
+from Preprocess_Nakshatra import utils
 
 __version__ = '0.0.4'
 
