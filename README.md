@@ -13,6 +13,7 @@ pip install textblob==0.15.3
 Install 
 
 `pip install git+https://github.com/nakshatrasinghh/Preprocessing_Nakshatra.git`
+
 `python -m spacy download en_core_web_lg`
 
 Uninstall
