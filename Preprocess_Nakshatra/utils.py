@@ -9,11 +9,11 @@ from spacy.lang.en.stop_words import STOP_WORDS as stopwords
 from bs4 import BeautifulSoup
 import unicodedata
 from textblob import TextBlob
-import en_core_web_md
+import en_core_web_sm
 
 from sklearn.feature_extraction.text import CountVectorizer
 
-nlp = en_core_web_md.load()
+nlp = en_core_web_sm.load()
 
 def _get_wordcounts(x):
 	length = len(str(x).split())
