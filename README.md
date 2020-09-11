@@ -6,7 +6,7 @@ Dependencies
 ```
 ---------------------------------------
 pip install spacy==2.2.3
-python -m spacy download en_core_web_md
+python -m spacy download en_core_web_sm
 pip install beautifulsoup4==4.9.1
 pip install textblob==0.15.3
 ---------------------------------------
@@ -16,8 +16,6 @@ pip install textblob==0.15.3
 Install 
 
 `pip install git+https://github.com/nakshatrasinghh/Preprocess_Nakshatra.git`
-
-`python -m spacy download en_core_web_md`
 
 Uninstall
 
