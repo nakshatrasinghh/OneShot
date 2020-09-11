@@ -11,6 +11,8 @@ import unicodedata
 from textblob import TextBlob
 import en_core_web_md
 
+from sklearn.feature_extraction.text import CountVectorizer
+
 nlp = en_core_web_md.load()
 
 def _get_wordcounts(x):
@@ -210,6 +212,33 @@ def _remove_rarewords(x, freq, n=20):
 	x = ' '.join([t for t in x.split() if t not in fn])
 	return x
 
+def _remove_dups_char(x):
+	x = re.sub("(.)\\1{2,}", "\\1", x)
+	return x
+
 def _spelling_correction(x):
 	x = TextBlob(x).correct()
 	return x
+
+def _get_basic_features(df):
+	if type(df) == pd.core.frame.DataFrame:
+		df['char_counts'] = df['text'].apply(lambda x: _get_charcounts(x))
+		df['word_counts'] = df['text'].apply(lambda x: _get_wordcounts(x))
+		df['avg_wordlength'] = df['text'].apply(lambda x: _get_avg_wordlength(x))
+		df['stopwords_counts'] = df['text'].apply(lambda x: _get_stopwords_counts(x))
+		df['hashtag_counts'] = df['text'].apply(lambda x: _get_hashtag_counts(x))
+		df['mentions_counts'] = df['text'].apply(lambda x: _get_mentions_counts(x))
+		df['digits_counts'] = df['text'].apply(lambda x: _get_digit_counts(x))
+		df['uppercase_counts'] = df['text'].apply(lambda x: _get_uppercase_counts(x))
+	else:
+		print('ERROR: This function takes only Pandas DataFrame')
+		
+	return df
+
+def _get_ngram(df, col, ngram_range):
+	vectorizer = CountVectorizer(ngram_range=(ngram_range, ngram_range))
+	vectorizer.fit_transform(df[col])
+	ngram = vectorizer.vocabulary_
+	ngram = sorted(ngram.items(), key = lambda x: x[1], reverse=True)
+
+	return ngram
