@@ -27,7 +27,7 @@ You have to have installed spacy and python3 to make it work.
 ```
 ----------------------------------------------------------
 def get_clean(x):
-    x = str(x).lower().replace('\\', '').replace('_', ' ')
+    x = str(x).lower().replace('\\', ' ').replace('_', ' ').replace('.', ' ')
     x = pn.cont_exp(x)
     x = pn.remove_emails(x)
     x = pn.remove_urls(x)
