@@ -36,7 +36,7 @@ def get_clean(x):
     x = pn.remove_mentions(x)
     x = pn.remove_accented_chars(x)
     x = pn.remove_special_chars(x)
-    x = re.sub("(.)\\1{2,}", "\\1", x)
+    x = pn.remove_dups_char(x)
     return x
 ----------------------------------------------------------
 ```
@@ -72,7 +72,7 @@ Note: Avoid to use `make_base` and `spelling_correction` for very large dataset 
 ```
 ----------------------------------
 x = 'lllooooovvveeee youuuu'
-x = re.sub("(.)\\1{2,}", "\\1", x)
+x = re.sub("(.)\\1{2,}", "\\1", x) ## remove_dups_char
 print(x)
 ---
 love you
