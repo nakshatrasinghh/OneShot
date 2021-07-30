@@ -168,7 +168,7 @@ def _remove_rt(x):
 	return re.sub(r'\brt\b', '', x).strip()
 
 def _remove_special_chars(x):
-	x = re.sub(r'[^\w ]+', "", x)
+	x = re.sub(r'[^\w ]+', " ", x)
 	x = ' '.join(x.split())
 	return x
 
