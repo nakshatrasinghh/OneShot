@@ -14,7 +14,6 @@ def get_avg_wordlength(x):
 def get_stopwords_counts(x):
 	return utils._get_stopwords_counts(x)
 
-
 def get_hashtag_counts(x):
 	return utils._get_hashtag_counts(x)
 
@@ -56,7 +55,6 @@ def remove_html_tags(x):
 
 def remove_accented_chars(x):
 	return utils._remove_accented_chars(x)
-
 
 def remove_stopwords(x):
 	return utils._remove_stopwords(x)
