@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 import unicodedata
 from textblob import TextBlob
 import en_core_web_sm
-
 from sklearn.feature_extraction.text import CountVectorizer
 
 nlp = en_core_web_sm.load()
@@ -137,13 +136,10 @@ def _cont_exp(x):
 	else:
 		return x
 
-
 def _get_emails(x):
 	emails = re.findall(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+\b)', x)
 	counts = len(emails)
-
 	return counts, emails
-
 
 def _remove_emails(x):
 	return re.sub(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)',"", x)
@@ -154,7 +150,6 @@ def _remove_mentions(x):
 def _get_urls(x):
 	urls = re.findall(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', x)
 	counts = len(urls)
-
 	return counts, urls
 
 def _remove_urls(x):
@@ -170,7 +165,6 @@ def _remove_special_chars(x):
 
 def _remove_html_tags(x):
 	return BeautifulSoup(x, 'lxml').get_text().strip()
-
 
 def _remove_accented_chars(x):
 	x = unicodedata.normalize('NFKD', x).encode('ascii', 'ignore').decode('utf-8', 'ignore')
@@ -228,7 +222,6 @@ def _get_basic_features(df):
 		df['uppercase_counts'] = df['text'].apply(lambda x: _get_uppercase_counts(x))
 	else:
 		print('ERROR: This function takes only Pandas DataFrame')
-		
 	return df
 
 def _get_ngram(df, col, ngram_range):
@@ -236,5 +229,4 @@ def _get_ngram(df, col, ngram_range):
 	vectorizer.fit_transform(df[col])
 	ngram = vectorizer.vocabulary_
 	ngram = sorted(ngram.items(), key = lambda x: x[1], reverse=True)
-
 	return ngram
