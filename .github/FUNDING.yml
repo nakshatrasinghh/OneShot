@@ -9,4 +9,4 @@ community_bridge: # Replace with a single Community Bridge project-name e.g., cl
 liberapay: # Replace with a single Liberapay username
 issuehunt: # Replace with a single IssueHunt username
 otechie: # Replace with a single Otechie username
-custom: ['http://www.paypal.me/nakshatrasinghh', 'https://razorpay.com/payment-button/pl_HYpz8CQ5P4NPzf/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button']
+custom: ['http://www.paypal.me/nakshatrasinghh', 'https://razorpay.com/payment-button/pl_HYpz8CQ5P4NPzf/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button', 'https://www.buymeacoffee.com/nakshatrasinghh']
