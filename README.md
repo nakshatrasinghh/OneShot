@@ -1,6 +1,6 @@
 # OneShot is all you need
 
-Tired of creating text preprocessing pipelines all the time? Don't worry, we got you covered! **OneShot** is a python textual data preprocessing library made just for you. Just import and feel the power ⚡. Many of the processes required for cleaning text is accessible. If you have any suggestions to make, you can connect with me by clicking the icons below. PR's are most welcome. ❤️
+Tired of creating text preprocessing pipelines all the time? Don't worry, we got you covered! **OneShot** is a python textual data preprocessing library made just for you. Just import and feel the power ⚡. Oneshot doesn't only provide you with functionality to clean your data, it also provides with numerical information present in the data. Many of the processes required for cleaning text is accessible. If you have any suggestions to make, you can connect with me by clicking the icons below. PR's are most welcome. ❤️
 
 <p align="left" align='right'>
 <a target="_blank"href="https://www.linkedin.com/in/nakshatrasinghh/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
@@ -26,8 +26,8 @@ pip install textblob==0.15.3
 `pip uninstall OneShot`
 
 ### How to use it? 🤔
-You need to have installed spacy and python3 to make it work.
 
+*Use this function to clean your dataset*
 ```
 ----------------------------------------------------------
 def get_clean(x):
@@ -45,6 +45,32 @@ def get_clean(x):
     x = re.sub("(.)\\1{2,}", "\\1", x)
     return x
 ----------------------------------------------------------
+```
+
+*Use this function to get numeric features, but wait is'nt this cumbersome? We have a surprise for you.*
+```
+----------------------------------------------------------
+def numeric_feats(x):
+    x = osx.get_wordcounts(x)
+    x = osx.get_charcounts(x)
+    x = osx.get_avg_wordlength(x)
+    x = osx.get_stopwords_counts(x)
+    x = osx.get_hashtag_counts(x)
+    x = osx.get_mentions_counts(x)
+    x = osx.get_uppercase_counts(x)
+    x = osx.get_digit_counts(x)
+    x = re.sub("(.)\\1{2,}", "\\1", x)
+    return x
+----------------------------------------------------------
+```
+
+### Surprise 🤗
+
+*Use this ONE function to get all the numeric features mentioned above.*
+```
+def numeric_feats(x):
+    x = osx.get_basic_features(x)
+    return x
 ```
 
 ### Use it indivitually 🧨
