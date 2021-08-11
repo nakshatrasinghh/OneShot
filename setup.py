@@ -5,10 +5,10 @@ with open('README.md', 'r') as file:
 
 
 setuptools.setup(
-	name = 'Preprocess_Nakshatra', 
-	version = '0.0.5',
+	name = 'OneShot', 
+	version = '0.0.6',
 	author = 'Nakshatra Singh',
-	author_email = 'nakshatradsu1@outlook.com',
+	author_email = 'iamnakshatrasingh@gmail.com',
 	description = 'This is my preprocessing package',
 	long_description = long_description,
 	long_description_content_type = 'text/markdown',

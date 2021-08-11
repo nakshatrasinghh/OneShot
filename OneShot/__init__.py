@@ -1,6 +1,6 @@
-from Preprocess_Nakshatra import utils
+from OneShot import utils
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 def get_wordcounts(x):
 	return utils._get_wordcounts(x)

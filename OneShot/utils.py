@@ -1,9 +1,5 @@
 import re
-import os
-import sys
-
 import pandas as pd
-import numpy as np
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS as stopwords
 from bs4 import BeautifulSoup
