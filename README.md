@@ -75,7 +75,7 @@ df['reviews'] = df['reviews'].apply(lambda x: osx.spelling_correction(x).raw_sen
 ---------------------------------------
 ```
 
-💡 Note: Avoid to use `make_base` and `spelling_correction` for very large dataset otherwise it might take hours to process.
+Note: Avoid to use `make_base` and `spelling_correction` for very large dataset otherwise it might take hours to process.
 
 
 ### Extras 😎
